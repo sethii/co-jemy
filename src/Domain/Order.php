@@ -16,6 +16,15 @@ class Order
         $this->id = $id;
     }
 
+    public static function recreate($aggregateId, array $events)
+    {
+        $order = new self($aggregateId);
+        foreach($events as $event) {
+            $order->apply($event);
+        }
+        return $order;
+    }
+
     public function open($supplierId)
     {
         $event = new OrderOpenedEvent($this->id, $supplierId);

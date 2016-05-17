@@ -19,4 +19,14 @@ class OrderSpec extends ObjectBehavior
         $this->getSupplierId()->shouldBe('shama');
         $this->getStatus()->shouldBe('opened');
     }
+
+    function it_should_recreate_order_from_events()
+    {
+        $this->beConstructedThrough('recreate', ['id123', [
+            new OrderOpenedEvent('id123', 'shama'),
+        ]]);
+        $this->getAggregateId()->shouldBe('id123');
+        $this->getSupplierId()->shouldBe('shama');
+        $this->getStatus()->shouldBe('opened');
+    }
 }
