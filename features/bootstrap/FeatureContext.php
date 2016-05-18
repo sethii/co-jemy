@@ -4,12 +4,12 @@ use Behat\Behat\Context\Context;
 use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
-use Infrastructure\Order\Handlers\OpenOrderHandler;
+use Infrastructure\CoJemy\Order\Handlers\OpenOrderHandler;
 use League\Tactician\Handler\CommandNameExtractor\ClassNameExtractor;
 use League\Tactician\Handler\Locator\InMemoryLocator;
 use League\Tactician\Handler\MethodNameInflector\HandleClassNameInflector;
 use Tests\Repository\InMemoryEventStore;
-use Infrastructure\Order\Commands\OpenOrderCommand;
+use Infrastructure\CoJemy\Order\Commands\OpenOrderCommand;
 
 /**
  * Defines application features from the specific context.

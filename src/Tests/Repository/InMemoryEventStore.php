@@ -1,11 +1,9 @@
 <?php
 
-
 namespace Tests\Repository;
 
-
-use Domain\EventStorePersister;
-use Domain\Order;
+use Domain\CoJemy\EventStorePersister;
+use Domain\CoJemy\Order;
 
 class InMemoryEventStore implements EventStorePersister
 {
